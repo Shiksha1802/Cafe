@@ -25,14 +25,14 @@
 
   .container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* spread columns equally */
+  grid-template-columns: repeat(5, 1fr); /* spread columns equally */
   grid-template-rows: auto auto auto auto auto;
   grid-template-areas:
-    "nav nav nav nav nav nav"
-    "img1 img2 img3 img4 img5 img5"
-    "con con con con con con"
-    "art art art art art con"
-    "foot foot foot foot foot con";
+    "nav nav nav nav nav "
+    "img1 img2 img3 img4  img5"
+    "con con con con con "
+    "art art art art art "
+    "foot foot foot foot foot ";
   gap: 10px;
   width: 100vw;         /* takes full width of viewport */
   max-width: 100%;
@@ -79,8 +79,9 @@
     .img-1, .img-2, .img-3, .img-4, .img-5{
       min-width: 225px;
       padding: 10px;
+      
     }
-
+   
     img {
       height: 200px;
       width: 225px;
@@ -276,9 +277,7 @@ img:hover{
   <div class="img-5">
     <img src="Cafe/acffeee.jpg" alt="">
   </div>
-        <div class="img-5">
-    <img src="Cafe/acffeee.jpg" alt="">
-  </div>
+      
     </div>
 
     <div class="content">
