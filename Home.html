@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <title>Cafe</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -18,96 +18,103 @@
       background-repeat: no-repeat;
       background-size: cover;
       height: 100%;
-      overflow-x: hidden;
+      width: 100%;
+      overflow-x: auto;
       scroll-behavior: smooth;
     }
 
     .container {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat(5, auto);
       grid-template-rows: auto auto auto auto auto;
       grid-template-areas:
-        "nav nav nav nav"
-        "img1 img2 img3 img4"
-        "con con con con"
-        "art art art art"
-        "foot foot foot foot";
+        "nav nav nav nav nav"
+        "img1 img2 img3 img4 img5"
+        "con con con con con"
+        "art art art art art"
+        "foot foot foot foot foot";
       gap: 10px;
+      width: max-content; /* Enable horizontal scrolling */
+      overflow-x: auto;
     }
 
     .nav {
-      grid-area: nav;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      background-image: url('Cafe/hd5');
-      background-size: cover;
-      background-position: center;
+      align-items: flex-start;
+      justify-content: flex-start;
+      border: 2px solid rgba(255, 252, 252, 0.471);
       border-radius: 40px;
+      background-image: url(Cafe/hd5);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      grid-area: nav;
       padding: 10px;
     }
 
     .nav a {
-      border: 2px solid white;
-      border-radius: 20px;
-      margin: 10px;
+      border: 4px solid rgba(255, 255, 255, 0.766);
+      border-radius: 40px;
+      margin: 20px;
       text-decoration: none;
-      font-size: 18px;
-      color: white;
-      padding: 8px 15px;
-      background-color: rgba(0, 0, 0, 0.4);
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(255, 255, 255, 0.925);
+      font-weight: 800;
     }
 
     .nav a:hover {
       background-color: blanchedalmond;
-      color: #864621;
+      color: rgb(134, 105, 33);
     }
 
-    .img-1, .img-2, .img-3, .img-4 {
+   .header{
+    display: flex;
+    gap: 15px;
+ 
+}
+
+    .img-1, .img-2, .img-3, .img-4, .img-5{
+      min-width: 225px;
       padding: 10px;
+    }
+
+    img {
+      height: 200px;
+      width: 225px;
+      border: 2px solid black;
     }
 
     .img-1 { grid-area: img1; }
     .img-2 { grid-area: img2; }
     .img-3 { grid-area: img3; }
     .img-4 { grid-area: img4; }
-
-    .img-1 img, .img-2 img, .img-3 img, .img-4 img {
-      width: 100%;
-      height: auto;
-      border: 2px solid black;
-      display: block;
-      margin-bottom: 10px;
-    }
-
+    .img-5 { grid-area: img5; }
     .content {
-      grid-area: con;
       background-color: rgb(121, 79, 26);
+      grid-area: con;
+      font-family: cursive;
+      font-style: italic;
       color: antiquewhite;
       text-align: center;
       padding: 30px 10px;
-      font-family: cursive;
-      background-image: url('Cafe/beans.jpg');
+      background-image: url(Cafe/beans.jpg);
       background-position: center;
-      background-size: cover;
+      text-decoration: underline;
     }
 
     .content span {
       font-weight: 900;
-      font-size: 35px;
-      text-decoration: underline;
+      font-size: 45px;
     }
 
     .content a {
-      font-size: 20px;
-      padding: 10px 20px;
-      background-color: blanchedalmond;
-      color: black;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
       border-radius: 12px;
+      font-size: 25px;
+      background-color: blanchedalmond;
+      text-decoration: none;
+      color: black;
+      padding: 8px 16px;
     }
 
     .content a:hover {
@@ -116,96 +123,119 @@
     }
 
     .article {
-      grid-area: art;
-      text-align: center;
-      font-size: 28px;
+      display: flex;
+      font-size: 37px;
       font-weight: 700;
-      color: #3f0d0d;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-shadow: 2px 2px 5px rgb(218, 90, 90);
-      padding: 20px;
+      color: rgb(63, 13, 13);
+      font-style: italic;
+      grid-area: art;
+      justify-content: center;
+      margin: 20px;
+      text-shadow: 13px 6px 5px rgb(218, 90, 90);
+    }
+
+    .article span {
+      font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     .footer {
       grid-area: foot;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 20px;
-      justify-content: center;
-      background-color: #f0e6d6;
       padding: 20px;
     }
 
     .ft {
+      font-size: 40px;
       min-width: 200px;
-      font-size: 16px;
+      color: rgba(85, 42, 26, 0.933);
     }
 
-    .ft ul {
-      list-style: none;
-      padding: 0;
-      border-left: 3px solid brown;
-      padding-left: 20px;
+    .cof {
+      padding-top: 30px;
+      text-align: center;
     }
 
     .ft li {
-      line-height: 28px;
+      font-size: 20px;
+      list-style-type: none;
+      text-align: start;
+      line-height: 30px;
       text-transform: capitalize;
+    }
+
+    .ft ul {
+      border-left: 3px solid brown;
+      padding: 0px 20px;
     }
 
     .ft i {
       color: brown;
     }
 
-    .cof {
-      font-size: 30px;
-      text-align: center;
-    }
-
-    /* ============ MEDIA QUERY FOR PHONES ============ */
     @media (max-width: 600px) {
       .container {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows:
-          auto
-          auto
-          auto
-          auto
-          auto
-          auto
-          auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
         grid-template-areas:
-          "nav nav"
-          "img1 img2"
-          "img3 img3"
-          "img4 img4"
-          "con con"
-          "art art"
-          "foot foot";
+          "nav"
+          "img1"
+          "img2"
+          "img3"
+          "img4"
+          "img5"
+          "con"
+          "art"
+          "foot";
+        width: 100%;
       }
 
       .nav {
         flex-direction: column;
-        align-items: center;
+        padding: 15px;
       }
 
       .nav a {
-        margin: 5px;
+        margin: 8px;
         font-size: 16px;
+        width: 90%;
+        text-align: center;
+      }
+
+      .header {
+        display: block;
+      }
+
+      .img-1 img, .img-2 img, .img-3 img, .img-4 img, .img-5 img{
+        width: 100%;
+        height: auto;
       }
 
       .content span {
-        font-size: 28px;
+        font-size: 26px;
+      }
+
+      .content a {
+        font-size: 18px;
       }
 
       .article {
-        font-size: 24px;
-        padding: 10px;
+        font-size: 22px;
+        padding: 15px;
       }
 
       .footer {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .ft ul {
+        border-left: none;
+        border-bottom: 2px solid brown;
+        padding-left: 0;
+        padding-bottom: 10px;
       }
 
       .ft {
@@ -216,8 +246,6 @@
 </head>
 <body>
   <div class="container">
-
-    <!-- Navbar -->
     <div class="nav">
       <a href="Sign.html">Register</a>
       <a href="Home.html">Home</a>
@@ -225,41 +253,41 @@
       <a href="About.html">About Us</a>
     </div>
 
-    <!-- Images -->
-    <div class="img-1">
-      <img src="Cafe/cup.jpg" alt="Cup">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    </div>
-    <div class="img-2">
-      <img src="Cafe/cafe1.jpg" alt="Cafe 1">
-      Lorem ipsum dolor sit amet, consectetur adipisicing.
-    </div>
-    <div class="img-3">
-      <img src="Cafe/2.jpg" alt="Cafe 2">
-      Expedita blanditiis ullam dolorem itaque neque!
-    </div>
-    <div class="img-4">
-      <img src="Cafe/caffee.jpg" alt="Cafe 3">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <div class="header">
+<div class="img-1">
+  <img src="Cafe/cup.jpg" alt="">
+</div>
+<div class="img-2">
+  <img src="Cafe/cafe1.jpg" alt="">
+  
+</div>
+<div class="img-3">
+  <img src="Cafe/2.jpg" alt="">
+  </div>
+<div class="img-4">
+  <img src="Cafe/caffee.jpg" alt="">
+  </div>
+  <div class="img-5">
+    <img src="Cafe/acffeee.jpg" alt="">
+  </div>
     </div>
 
-    <!-- Content -->
     <div class="content">
-      <span>CHECK OUT OUR BEST BEANS</span><br>
-      <a href="explore.html">Explore our product</a>
+      <div><span>CHECK OUT OUR BEST BEANS</span></div><br>
+      <div class="explore">
+        <a href="explore.html">Explore our product</a>
+      </div>
     </div>
 
-    <!-- Article -->
     <div class="article">
-      <p><span>Come and Join Us</span><br>OUR HAPPY CUSTOMERS</p>
+      <p><span>&nbsp;&nbsp;&nbsp; Come and Join Us </span><br>OUR HAPPY CUSTOMER</p>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
       <div class="ft cof"><b>COFFEE</b><br><i class="fas fa-coffee"></i></div>
 
       <div class="ft">
-        <ul>Privacy
+        <ul>PRIVACY
           <li>Terms of Use</li>
           <li>Privacy Policy</li>
           <li>Cookie</li>
@@ -270,7 +298,7 @@
         <ul>Services
           <li>Shop</li>
           <li>Menu</li>
-          <li>Order Check</li>
+          <li>Order Checked</li>
         </ul>
       </div>
 
@@ -284,13 +312,12 @@
 
       <div class="ft">
         <ul>Social Media
-          <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-          <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-          <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f">&nbsp;Facebook</i></a></li>
+          <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter">&nbsp;Twitter</i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram">&nbsp;Instagram</i></a></li>
         </ul>
       </div>
     </div>
-
   </div>
 </body>
 </html>
