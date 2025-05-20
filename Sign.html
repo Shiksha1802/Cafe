@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+       background:linear-gradient(to right,#fff2d7,#523b35 ); 
+ 	    display: grid;
+      place-items: center;
+      height: 90vh;
+      width: cover;
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+
+    table {
+      /* padding: 10px; */
+      font-size: 20px;
+      color: rgb(255, 255, 255);
+      font-weight: 600;
+      background-image: url(Cafe/bg2.jpg);
+      border-radius: 60px;
+      background-position: center;
+      padding: 20px;
+      background-size: contain;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      margin: 20px, 10px, 20px, 20px;
+      padding: 0.1rem 1rem;
+      border-radius: 0.25rem;
+      background-color: #fff2d7;
+      color:black;
+      font-size: 1rem;
+      transition: background-color 0.2s;
+
+      &:hover,
+      :focus {
+        outline: none;
+        background-color:#7c503f ;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table cellpadding="10">
+    <form action="Regctrl" method="post">
+
+      <tr>
+        <td>NAME:</td>
+        <td><input type="text" name="uname" required></td>
+      </tr>
+      <tr>
+        <td>EMAIL: </td>
+        <td><input type="text" name="email" required></td>
+      </tr>
+      <tr>
+        <td>Phone No.: </td>
+        <td><input type="text" name="mobile" required></td>
+      </tr>
+      <tr>
+        <td>DOB: </td>
+        <td><input type="date" name="DOB" required></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" name="password" required></td>
+      </tr>
+      
+      <tr>
+        <th><input type="submit" class="button" name="SUBMIT" required></th>
+        <th><input type="reset" class="button" name="clear"></th>
+      </tr>
+    </form>
+  </table>
+</body>
+
+</html>

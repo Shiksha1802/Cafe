@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    
+    
+    <style>
+      * {
+    box-sizing: border-box;
+}     
+            body{
+              background:linear-gradient(#f1e6de,#fff2d7,#98623c) ;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: cover;
+              
+            }
+            .table1
+           {
+            
+            margin: 200px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+            color: rgba(255, 255, 255, 0.812) ;
+                        border-width: 05px;
+             border-style: solid; 
+             border-color:rgb(206, 211, 219); 
+             border-radius: 60px;
+             padding: 40px;
+             line-height: 40px;
+             background-image: url(images/ai2.gif) ;
+             background-position: right;
+                        
+            }
+    
+                     
+            .myclass
+            {
+              color: rgb(255, 255, 255);
+                font-size: 25px;
+                font-style: italic; 
+                text-decoration: none;
+                padding: 50Px;
+            }
+            .button 
+            {
+           margin: 20px,10px,20px,20px;
+            padding: 0.1rem 1rem;
+            border-radius: 0.25rem;
+            background-color:  rgb(251, 251, 255);
+            color: rgb(180, 180, 187);
+            font-size: 1rem;
+            transition: background-color 0.2s;
+            &:hover,:focus {
+            background-color: rgb(10, 10, 11);
+  }    
+            }
+
+
+      
+         </style>
+    </head>
+  
+<body>
+<%
+String m=(String)request.getAttribute("msg");
+if(m!=null){
+	out.print(m);
+}
+%>
+ 
+    <center>
+    
+        <table  class="table1" >  <form action="loginctrl" method="post">
+      <tr>  
+        <td><u>Email</u> </td>
+        <td><input type="text" name="Uname" required></td>
+      </tr>
+      <tr>
+        <td><u>PASSWORD:</u> </td>
+        <td><input type="password" name="Password" id="" required></td>
+      </tr>
+     
+    <tr>
+        <td colspan="2" ><input type="button" class="button" value="LOGIN"></td>
+    </tr>
+   
+    <tr>
+        <td colspan="2">IF YOU ARE NEW USER THEN <a href="Sign.jsp">REGISTER</a> FIRST.</td>
+    </tr>
+  
+    </form>
+</table>
+</center>
+</body>
+</html>        

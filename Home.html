@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Cafe</title>
+   <style >
+   *{
+    margin: 0;
+    padding:0;
+
+    box-sizing: border-box; 
+}
+
+html, body {
+  background-color: antiquewhite;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;  /* Makes sure the page stretches the full height */
+    overflow-x: hidden;  /* Disables horizontal scrolling */
+    scroll-behavior: smooth;  /* Enables smooth scrolling */
+}
+.container{
+    display: grid;
+    grid-template-columns:   1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto ;
+    grid-template-areas: "nav nav nav nav"
+    " img1 img2 img3 img4 "
+    "con con con con "
+    "art art art art "
+    "foot foot foot foot ";
+    gap:10px;
+}
+
+.nav{
+  box-sizing: border-box;
+    display: flex;
+     align-items: flex-start;
+    justify-content: center;
+   border: 2px solid rgba(255, 252, 252, 0.471);
+   border-radius: 40px;
+   background-image:url(Cafe/hd5);
+   
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   grid-area: nav; 
+   justify-content:flex-start;
+  
+}
+
+.nav a{
+   
+    border: 4px solid rgba(255, 255, 255, 0.766);
+    border-radius: 40px;
+    margin: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgba(255, 255, 255, 0.925);
+    font-weight: 800;
+
+}
+.nav a:hover{
+    border-radius: 40px;
+    
+    background-color: blanchedalmond;
+    text-decoration: none;
+    color: rgb(134, 105, 33);
+}
+.header{
+    display: flex;
+    gap: 15px;
+ 
+}
+img{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2px;
+    height: 200px;
+    width: 225px;
+    padding: 0;
+    border: 2px solid black;
+}
+.img-1{
+  margin-left: 40px;   
+    grid-area: img1;
+}
+.img-3{
+    
+    grid-area: img3;
+}
+
+.img-2{
+  
+    grid-area: img2;
+}
+.img-4{
+    grid-area: img4;
+}
+
+.content {
+    background-color: rgb(121, 79, 26);
+    grid-area: con;
+   
+    font-family: cursive;
+    font-style: italic;
+    color: antiquewhite;
+    
+    text-align: center;
+    padding-top: 30px;
+    background-image: url(Cafe/beans.jpg);
+    background-position: center;
+    
+    text-decoration: underline;
+   }
+   .explore{
+    margin: 10px;
+   }
+  .content span{
+    font-weight: 900;
+    font-size: 45px;
+   }
+.content a{
+    border-radius: 12px;
+    font-size: 25px;
+    background-color: blanchedalmond;
+    text-decoration: none;
+    color: black;
+}
+ .content a:hover
+     { 
+        background-color: rgb(243, 201, 151);
+       
+        box-shadow: 3px 3px 3px 3px rgb(78, 46, 1);
+}
+.article {
+    display: flex;
+    font-size: 37px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(63, 13, 13);
+    font-style: italic;
+    grid-area: art;
+    justify-content: center ;
+    margin: 20px;
+    text-shadow: 13px 6px 5px  rgb(218, 90, 90);
+}
+.article span{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.footer{
+   grid-area: foot;
+   display: flex;
+
+}
+.ft{
+font-size: 40px;
+width:300px;
+
+color:rgba(85, 42, 26, 0.933);
+
+
+}
+.cof{
+    padding-top: 30px;
+    text-align: center;
+}
+.ft li{
+    font-size: 20px;
+    list-style-type: none ;
+    text-align: start;
+   line-height: 30px;
+   text-transform: capitalize;
+
+}
+.ft ul{
+    border-left: 3px solid brown;
+    padding: 0px 50px 0px  50px;
+}
+.ft i{
+    color: brown;
+   
+}
+
+/* MEDIA QUERY */
+@media(max-width:400px){
+    .container{
+        display: grid;
+        grid-template-columns:   1fr 1fr ;
+        grid-template-rows: 400px 200px 200px 200px 200px 300px 50px;
+        grid-template-areas: "nav nav "
+        " img1 img2  "
+        "img3 img3"
+        "img4 img4"
+        "con con  "
+        "art art "
+        "foot foot  ";
+        gap:10px;
+    }}
+    @media(max-width:1300px){
+        .container{
+            display: grid;
+            grid-template-columns:   1fr 1fr  ;
+            grid-template-rows: 200px 150px 200px 200px 200px 200px 50px;
+            grid-template-areas: "nav nav "
+            " img1 img2  "
+            "img3 img3"
+            "img4 img4"
+            "con con  "
+            "art art "
+            "foot foot  ";
+            gap:10px;
+        }}
+   </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="container">
+        <div class="nav">
+            <a href="Sign.jsp" > Register</a>
+            <a href="Home.jsp" > Home</a>
+            <a href="Details.jsp" > Detail</a>
+            <a href="About.jsp" > About Us</a>
+ </div>
+            <div class="header">
+            <div class="img-1"> 
+            <img src="Cafe/cup.jpg" alt=""> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa dolores eveniet in earum quidem quas amet nihil libero labore voluptatum!</div>
+            <div class="img-2">
+            <img src="Cafe/cafe1.jpg" alt="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam doloribus fuga, obcaecati nobis facere itaque.</div>
+            <div class="img-3">
+            <img src="Cafe/2.jpg" alt="">hic, qui consequuntur eum voluptatem nulla. Expedita blanditiis ullam dolorem itaque neque!</div>
+            <div class="img-3">
+            <img src="Cafe/cafee.jpg" alt="">Lorem ipsum dolor sit, amet consectetur adiptiis ullam dolorem itaque neque!</div>
+            <div class="img-3">
+            <img src="Cafe/acffeee.jpg" alt="">Lorem ipsum dolor sit, amet consectetur adipisiciiis ullam dolorem itaque neque!</div>
+            <div class="img-4">
+            <img src="Cafe/caffee.jpg" alt=""  height="150px" width="200px">Lorem ipsum dolor sit, amet consectetur adipisiclorem itaque neque!</div>
+           
+                             
+            </div>
+
+<!-- Content  -->
+   <div class="content">
+        <div><span>
+            CHECK OUT OUR BEST BEANS </span>
+        </div><br>
+        <div class="explore">
+        <a href="explore.html">Explore our product</a>
+   </div></div>
+ <!-- Article  -->
+    <div class="article">
+
+    <div><p> <span>&nbsp;&nbsp;&nbsp;  Come and Join Us </span><br>
+     OUR HAPPY CUSTOMER </p></div>
+        </div>
+    <!-- Footer  -->
+    <div class="footer">
+
+
+   <div class="ft cof" ><B>COFFEE</B> <br>
+
+    <i class="fas fa-coffee"></i> 
+</div>
+   <div class="ft"> 
+    <ul>PRIVACY
+        <li>
+            terms of Use
+
+        </li>
+        <li>
+            Privacy Policy
+        </li>
+        <li>
+            Cookie
+        </li>
+    </ul>
+   </div>
+
+   <div  class="ft">
+    <ul>Services 
+        <li>
+        Shop
+        </li>
+        <li>
+         Menu
+        </li>
+        <li>
+          Ordered Checked
+        </li>
+    </ul>
+   </div>
+
+   <div  class="ft"> <ul>Information
+    <li>
+   Places and Prices
+    </li>
+    <li>
+     Jobs
+    </li>
+    <li>
+      Sale Your Product
+    </li>
+</ul>
+</div>
+   <div  class="ft"> 
+   <ul>Social_meadia 
+   <li> <a href="https://www.facebook.com" target="_blank">
+        <i class="fab fa-facebook-f">&nbsp;Facebook</i>
+    </a>
+</li> <li>    <a href="https://www.twitter.com" target="_blank">
+        <i class="fab fa-twitter">&nbsp;Twitter</i>
+    </a></li>
+    <li>
+    <a href="https://www.instagram.com" target="_blank">
+        <i class="fab fa-instagram">&nbsp;Instagram</i>
+    </a>
+</li>
+   </ul>
+
+
+</div>
+
+
+    </div>   
+    </div>
+</body>
+</html>
